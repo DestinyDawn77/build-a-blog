@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type = "text/css">
+
+    body{
+        background-color: #5d85d5;
+    }
+
+
+    h1{
+        text-align: center;
+        text-shadow: 2px 2px 8px #404040;
+        color: white;
+        font-size: 48pt;
+        font-family: "Times New Roman", Times, serif;;
+    }
+    .blog-title{
+        text-shadow: none;
+        color:black;
+        font-family: sans-serif;
+        font-size: 24pt;
+
+    }
+
+    .blog-body{
+        text-shadow: none;
+        color:black;
+        font-family: sans-serif;
+        font-size: 14pt;
+    }
+
+</style>
+    <h1> Michelle's Blog Page <h1>
+    <hr class = "mainline">
+
+        {% for blog in blogPost %}
+            <div class = "blogPost">
+
+
+                    <div class = "blog-title"><a href="/newpost/{{ blog.key().id()}}">{{blog.title}}</a></div>
+                <pre class = "blog-body">{{blog.body}}</pre>
+            </div>
+            <hr class = "divline">
+        {% endfor %}
+
+{% endblock %}

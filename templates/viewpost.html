@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Your Recent Post Submission <h1>
+<hr class = "mainline">
+
+    <div class = "blogPost">
+            <div class = "blog-title">{{post.title}}</div>
+            <pre class = "blog-body">{{post.body}}</pre>
+        </div>
+        <hr class = "divline">
+
+{% endblock %}

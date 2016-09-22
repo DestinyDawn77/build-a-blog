@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <style>
+
+        body{
+            background-color: #ccccff;
+        }
+
+        h1{
+            text-align: center;
+            text-shadow: 2px 2px 8px #404040;
+            color: black;
+            font-size: 48pt;
+            font-family: "Times New Roman", Times, serif;;
+        }
+        form{
+            position: relative;
+            left:150px;
+        }
+
+        .error{
+            color:red;
+            font-size: 14pt;
+        }
+
+        input[type = text] {
+            width:1200px;
+            font-size: 20px;
+            padding: 2px;
+            border-style: inset;
+            border-width: thick;
+        }
+
+        textarea {
+                width:1200px;
+                height: 200px;
+                font-size: 17px;
+                font-family: sans-serif;
+                padding: 2px;
+                border-style: inset;
+                border-width: thick;
+            }
+
+        label{
+            display:block;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        input[type = submit] {
+            font-size: 24px;
+
+        }
+</style>
+
+
+    <h1>Michelle's Blog Page - Submit Your Blog</h1>
+
+
+        <form method = "post">
+            <label>
+                <div>Blog Post Title <div>
+                <input type = "text" name = "title" value = "{{title}}">
+            </label>
+
+            <label>
+                <div> Post </div>
+                <textarea name="body" value = "{{body}}"></textarea>
+            </label>
+            <br>
+            <div class = "error">{{error}}</div>
+            <br>
+
+            <input type="submit">
+        </form>
+
+{% endblock %}
